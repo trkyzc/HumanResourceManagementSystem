@@ -31,14 +31,14 @@ public class Position  {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	@JsonIgnore
+	//@JsonIgnore
 	private int id;
 	
 	@Column(name="name")
 	private String name;
 	
 	@OneToMany(mappedBy = "position")
-	@JsonIgnore
+	//@JsonIgnore
 	private List<JobAdvert> jobAdverts;
 	
 	

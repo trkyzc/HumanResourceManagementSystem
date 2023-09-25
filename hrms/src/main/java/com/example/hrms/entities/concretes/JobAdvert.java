@@ -1,5 +1,6 @@
 package com.example.hrms.entities.concretes;
 
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import org.springframework.data.annotation.Transient;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -48,14 +51,18 @@ public class JobAdvert {
 	@Column(name="number_of_open_position")
 	private int numberOfOpenPosition;
 	
+	@Column(name="created_date")
+	@JsonIgnore
+	private LocalDate createdDate=LocalDate.now();
+	
 	@Column(name="applicationDeadline")
-	private Date applicationDeadline;   //utilden aldım sqlden de var ????
+	private LocalDate applicationDeadline;   //utilden aldım sqlden de var ????
 	
 	@Column(name="is_active")
 	private boolean isActive;
 	
 	@ManyToOne
-	@JoinColumn(name = "city_id", nullable = false)
+	@JoinColumn(name = "city_id")
 	private City city;
 	
 	@ManyToOne()
@@ -63,8 +70,8 @@ public class JobAdvert {
 	private Position position;
 	
 	@ManyToOne()
-	@JoinColumn(name = "user_id")
-	@Transient
+	@JoinColumn(name = "employer_id")
+	//@Transient
 	private Employer employer;
 	
 	

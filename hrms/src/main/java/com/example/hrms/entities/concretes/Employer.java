@@ -39,7 +39,7 @@ public class Employer extends User {
 	private String phoneNumber;
 	
 	@OneToMany(mappedBy = "employer")
-	@JsonIgnore
+	//@JsonIgnore
 	private List<JobAdvert> jobAdverts;
 	
 	

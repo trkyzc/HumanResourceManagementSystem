@@ -29,7 +29,7 @@ public class User  {
 	@Id
 	@GeneratedValue
 	@Column(name="id")
-	@JsonIgnore                   //json gösteriminin dışında tutar.
+	//@JsonIgnore                   //json gösteriminin dışında tutar.
 	private int id;
 	
 	@Column(name="email")

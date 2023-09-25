@@ -28,7 +28,7 @@ public class City {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="id")
-	@JsonIgnore
+	//@JsonIgnore
 	private int id;
 	
 	@Column(name="name")
